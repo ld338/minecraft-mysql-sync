@@ -1,7 +1,13 @@
+# This is the configuration file for the plugin
+
+# MySQL Configuration
 host: localhost
 port: 3306
 database: test
 username: root
 password: root
 
+# Only if you want to reset the tables
+# It will just delete them. They will be created if they don't exist anyway
+# If you want to recreate the tables, set this to true
 recreatetables: false

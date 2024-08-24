@@ -1,5 +1,7 @@
 package de.ld338.mysqlsync.tools;
 
+import org.bukkit.Bukkit;
+
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -8,7 +10,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class PlayerUtil {
-    private static final Logger LOGGER = Logger.getLogger(PlayerUtil.class.getName());
+    private static final Logger LOGGER = Bukkit.getLogger();
 
     private static void loadData(org.bukkit.entity.Player player, String table, DataDecoder decoder) {
         String query = String.format("SELECT CONTENTS FROM %s WHERE player_uuid = ?", table);

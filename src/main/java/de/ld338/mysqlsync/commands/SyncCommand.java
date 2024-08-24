@@ -18,6 +18,8 @@ public class SyncCommand implements CommandExecutor {
         for (Player onlinePlayer : Bukkit.getOnlinePlayers()) {
             PlayerUtil.saveData(onlinePlayer);
         }
+
+        commandSender.sendMessage("§6MySQL §8» §7All player data has been saved to the database.");
         return false;
     }
 }
