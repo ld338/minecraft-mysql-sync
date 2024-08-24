@@ -17,6 +17,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.SQLException;
 import java.sql.Time;
 import java.util.HashMap;
 
@@ -53,6 +54,7 @@ public final class MySQLSync extends JavaPlugin implements Listener {
 
     @Override
     public void onDisable() {
+        Bukkit.getOnlinePlayers().forEach(PlayerUtil::saveData);
         MySQL.closeConnection();
     }
 
